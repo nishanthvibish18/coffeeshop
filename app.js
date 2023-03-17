@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-const app = express()
+const app = express();
 app.use(express.json())
+const port = 10000;
 
 const coffeeRouter = require('./Router/router');
 
@@ -11,7 +12,6 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors);
 
-const port = 10000;
 app.get('/', (req, res) => {
     res.send('Hello World!');
   });
