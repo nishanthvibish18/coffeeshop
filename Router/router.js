@@ -18,10 +18,10 @@ coffeeRouter.post('/createorder', async (req, res) => {
  const coffee = await coffeModels.save()
  try{
 
-    res.status(201).send({status: 'success',message: 'your order is successfully'})
+    res.send({status: 'success',message: 'your order is successfully'})
  }
  catch(errors){
-    res.status(401).send({status: 'failed',message: 'unable to save data try again'})
+    res.send({status: 'failed',message: 'unable to save data try again'})
 
 }
 
@@ -31,10 +31,10 @@ coffeeRouter.get('/getdata',async (req, res) => {
 
     try{
         const datas = await cofffeModel.find({})
-        res.status(201).send({status: 'success',message: 'your order history is',response: datas})
+        res.send({status: 'success',message: 'your order history is',response: datas})
     }
     catch(errors){
-        res.status(401).send({status: 'failed',message: 'unable to save data try again'})
+        res.send({status: 'failed',message: 'unable to save data try again'})
     }
 })
 
